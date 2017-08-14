@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'   //表示是应用程序模块
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.ikok.calculator"   //项目的包名
+        minSdkVersion 16                      //指定项目最低兼容的 android 版本
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {   //buildType 有两种，一种是 release 一种是debug
+            minifyEnabled true   //生成APK文件时 代码混淆与否
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'  //指定混淆时使用的混淆规则文件
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])   //本地依赖
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'   //远程依赖
+    // 库依赖格式 ：  compile project(':helper')    就是对远程库 helper 的依赖
+}

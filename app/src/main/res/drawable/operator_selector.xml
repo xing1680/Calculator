@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--切记点击按钮时所要显示的颜色必须放在默认颜色的前面-->
+    <item android:drawable="@color/colorClick" android:state_pressed="true" />
+    <item android:drawable="@color/colorOperator"/>
+</selector>
